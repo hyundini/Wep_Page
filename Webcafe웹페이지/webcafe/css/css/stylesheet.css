@@ -1,0 +1,382 @@
+@import url(./normallize.css);
+@import url(./reset.css);
+@import url(./fonts.css);
+@import url(./fontello.css);
+html{
+  font-size: 10px;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only, legend{
+position: absolute;
+width: 1px;
+height: 1px;
+overflow: hidden;
+margin: -1px;
+clip: rect(0, 0, 0, 0);
+clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+/* link style */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+/* default box sizing */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+
+body{
+  background: url(./images/bg_flower.png)no-repeat 50% 0, 
+  #ccc linear-gradient(to bottom,#aaa, #fff)
+  ;
+  color: #111;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+
+/* 레이아웃*/
+.header, .visual, .main, .slogan, .footer-inner{
+  width: 940px;
+  margin: 0 auto;
+}
+
+/* 헤더*/
+.header{
+  background:#fff;
+  position: relative;
+  padding:0 30px;
+  border-radius: 0 0 15px 15px
+}
+
+/* 로고*/
+.logo{
+  position: absolute;
+  left: 60px;
+  top: 45px;
+}
+
+/* 멤버 서비스 */
+.member-service{
+  padding: 4px 0;
+  text-align: right;
+}
+
+.member-service li{
+  display: inline-block;
+}
+
+.member-service span{
+  display: inline-block;
+  padding: 0 5px 0 2px;
+}
+
+.member-service a{
+  display: inline-block;
+  padding: 6px 0;
+  text-transform: uppercase;
+}
+
+/* 메인 메뉴 */
+.navigation{
+padding-bottom: 40px;  
+}
+.menu{
+  background: orangered;
+  display: flow-root;
+  height: 47px;
+  border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
+  padding-left: 225px;
+
+}
+.menu::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.menu-item{
+position: relative;
+float: left;
+}
+
+.menu-button{
+  border: 0;
+  background: transparent;
+  padding: 0 20px;
+  line-height: 45px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-left: 2px solid #fff;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000;
+}
+.is-active .menu-button{
+  color: #ff0;
+}
+.is-active .menu-button::after{
+  content: "";
+  display: block;
+  border-top: 2px solid #000;
+}
+
+.sub-menu{
+  position: absolute;
+  top: 0;
+  display: none;
+  top: 47px;
+  white-space: nowrap;
+}
+
+
+.menu-item:nth-child(-n+3) .sub-menu{
+left: 0;
+}
+.menu-item:nth-child(-n+4) .sub-menu{
+  right: 0;
+}
+
+.is-active .sub-menu{
+  display: block;
+}
+
+.menu-html{
+  display: block;
+}
+
+.sub-menu li{
+  display: inline-block;
+}
+.sub-menu a{
+  display: inline-block;
+  padding: 6px 4px;
+}
+
+.sub-menu a:hover, .sub-menu a:focus{
+  color: #f00;
+}
+
+.sub-menu a::before{
+  content: '\f192';
+  font-family: 'fontello';
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sub-menu a:hover::before, .sub-menu a:focus::before{
+  content: '\e800';
+}
+
+/* 비주얼*/
+@keyframes moveEffect {
+0%{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0);
+  transform: translate(0, 0);
+}
+100%{
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+  transform: translate(400px, 75px);
+} 
+}
+
+@keyframes fadeEffect {
+  0% {opacity: 1; }
+  100% {opacity: 0; }
+}
+
+.visual{
+  height: 120px;
+  position: relative;
+}
+  
+.visual::before, .visual::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background-repeat: no-repeat;
+  animation-name: fadeEffect;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-duration: alternate;
+}
+
+.visual::before{
+  background-image: url(./images/ani_flower_01.png),url(./images/ani_flower_02.png);
+  background-position: 0 -10px, 600px 0;
+}
+
+
+.visual::after{
+  background-image: url(./images/ani_flower_03.png),url(./images/ani_flower_04.png);
+  background-position: 300px 0, 800px 0;
+  animation-delay: 1000ms;
+}
+
+.visual-text{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation-name: moveEffect;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
+  position: absolute;
+  z-index: 10;
+}
+
+/* 메인 콘텐츠*/
+.main{
+  background-color: #fff;
+  border-radius: 15px 15px 0 0 ;
+  min-height: 400px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 30px 15px;
+}
+
+.group1{
+  width: 250px;
+}
+
+.group2{
+  width: 380px;
+}
+
+.group3{
+  width: 190px;
+}
+
+/* 로그인 */
+.login{
+  border-radius: 5px;
+  padding: 10px;
+  background-image: radial-gradient(circle at right top, orange, orangered);
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.login-title{
+  color:#ff0;
+  font-size:1.5rem;
+  font-weight: 700;
+  text-indent: 10px;
+}
+
+.login-form{
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+
+.login-form fieldset{
+  padding-bottom: 5px;
+  position: relative;
+border-bottom: 1px solid #aaa;
+}
+
+.login-form div{
+  margin-bottom: 5px;
+}
+
+.login-form label{
+  width: 4em;
+  display: inline-block;
+}
+
+.login-form input{
+  width: 90px;
+  height: 22px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 2px 2px 2px 0.5em;
+}
+
+.login-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: orangered;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 0 5px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.sign{
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 10px ;
+  letter-spacing: -0.1rem;
+}
+
+.sign a{
+  display: block;
+  padding: 6px 0;
+}
+
+.sign .icon-right-open::before{
+  color: coral;
+}
+
+/* 유효성 검사 배너*/
+.validation{
+  margin-top: 25px;
+}
+
+.validation-list{
+  margin-top: 25px;
+}
+
+.validation-list li{
+  margin-top: 10px;
+}
+
+.validation-list a{
+  background: #ccc url(./images/validation_icon.png) no-repeat 20px 50%; 
+  border: 1px solid #aaa;
+  display: block;
+  padding-left: 50px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+/* 슬로건*/
+.slogan{
+  background-color: coral;
+  height: 10vh;
+}
+
+/* 푸터*/
+.footer{
+  background: 
+  #ccc linear-gradient(to bottom,#aaa, #fff)
+}
+
+.footer-inner{
+  background-color: skyblue;
+  height: 10vh;
+}
