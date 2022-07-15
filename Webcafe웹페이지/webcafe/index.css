@@ -104,7 +104,7 @@ body{
   padding-bottom: 40px;
 }
 .menu{
-  background: #d16527 linear-gradient(to bottom,#edad2d 0%,#d16527 45%,#d16527 60%,#edad2d 100%); 
+  background: orange linear-gradient(to bottom,#edad2d 0%,#d16527 45%,#d16527 60%,#edad2d 100%); 
   padding-left: 228px;
   border-top: 2px solid #000;
   border-radius: 0 0 5px 5px;
